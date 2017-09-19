@@ -24,18 +24,19 @@ def softmax( t , s):
     s = np.multiply(s, np.ones(np.shape(t)))
     mod_t = np.absolute(t)
     print(np.shape(s))
+
     return np.multiply(np.sign(t) , np.maximum( np.zeros((N_FACTORS,1682)) ,  mod_t - s   ))
 
 
 
 
-def apply_algo():
-    trainData, testData , maskTrain = dataset_manager.fetch_data_100k_ratings("2")
+def apply_algo(index):
+    trainData, testData , maskTrain = dataset_manager.fetch_data_100k_ratings(str(index))
 
     R = trainData
     A = maskTrain
 
-    beta = np.max( np.linalg.eigvalsh( np.dot( np.transpose(A )  , A ) ) )
+    beta = np.max( np.linalg.eigvals( np.dot( np.transpose(A )  , A ) ) )
 
 
     lambda_U = 1e3
@@ -65,11 +66,11 @@ def apply_algo():
     k = 0
 
 
-    while(k < N_FACTORS*N_FACTORS):
+    while(k < N_FACTORS):
 
 
         print("")
-        print("ITERATION ::::" + str(iter) + " ::::::::::::::::::::::::")
+        print("ITERATION ::::::::" + str(iter) + " ::::::::::::::::::::::::")
         iter  = iter + 1
 
 
@@ -96,7 +97,7 @@ def apply_algo():
 
         W = np.dot(U_k_plus_1 , V_k) + np.multiply( (1/beta)  ,  Y_offset_k_plus_1 )
 
-        alpha = 1.01 * np.max( np.linalg.eigvalsh( np.dot( np.transpose(U_k) , U_k )))
+        alpha = 1.01 * np.max( np.linalg.eigvals( np.dot( np.transpose(U_k) , U_k )))
 
 
         subVal = np.multiply((1 / alpha), np.dot( np.transpose(U_k) , np.subtract(W , np.dot(U_k_plus_1 ,V_k))  )  )
@@ -122,5 +123,11 @@ def apply_algo():
     print("Done")
 
 if __name__=="__main__":
-    apply_algo()
+
+    list =[]
+    for i in range(1 , 6):
+        i_mae = apply_algo(i)
+        list.append(i_mae)
+
+    dataset_manager.dump_error("mae_error.txt", list)
 

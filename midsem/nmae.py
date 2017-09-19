@@ -18,4 +18,7 @@ def calc_nmae(rating , train):
                 tot_mae = tot_mae + i_mae
                 denominator = denominator + 1
 
-    print("Final" + str(tot_mae/denominator ))
+    solution = tot_mae/(rows * cols)
+    print("Final" + str( solution))
+
+    return solution
