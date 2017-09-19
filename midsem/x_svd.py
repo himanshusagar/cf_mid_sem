@@ -38,8 +38,8 @@ def apply_algo():
     beta = np.max( np.linalg.eigvalsh( np.dot( np.transpose(A )  , A ) ) )
 
 
-    lambda_U = 0.02
-    lambda_V = 0.02
+    lambda_U = 1e3
+    lambda_V = 1e-1
 
     average = np.average(A)
 
@@ -65,7 +65,7 @@ def apply_algo():
     k = 0
 
 
-    while(k < N_FACTORS):
+    while(k < N_FACTORS*N_FACTORS):
 
 
         print("")
