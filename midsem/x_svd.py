@@ -118,9 +118,10 @@ def apply_algo(index):
 
     New_Rating = np.dot( U_k , V_k )
 
-    nmae.calc_nmae(New_Rating , trainData)
-
     print("Done")
+
+    return nmae.calc_nmae(New_Rating , trainData)
+
 
 if __name__=="__main__":
 
