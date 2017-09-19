@@ -1,0 +1,45 @@
+D:\ML\Projects\Python3VirtualEnv\Scripts\python.exe D:/SEM_6/CF/Papers/ImplProject/four_svd/svd_main.py
+Evaluating MAE of algorithm SVD.
+
+------------
+Fold 1
+Processing epoch 0
+Processing epoch 1
+Processing epoch 2
+Processing epoch 3
+Processing epoch 4
+MAE:  0.7754
+------------
+Fold 2
+Processing epoch 0
+Processing epoch 1
+Processing epoch 2
+Processing epoch 3
+Processing epoch 4
+MAE:  0.7626
+------------
+Fold 3
+Processing epoch 0
+Processing epoch 1
+Processing epoch 2
+Processing epoch 3
+Processing epoch 4
+MAE:  0.7562
+------------
+Fold 4
+Processing epoch 0
+Processing epoch 1
+Processing epoch 2
+Processing epoch 3
+Processing epoch 4
+MAE:  0.7568
+------------
+Fold 5
+Processing epoch 0
+Processing epoch 1
+Processing epoch 2
+Processing epoch 3
+Processing epoch 4
+MAE:  0.7631
+
+Process finished with exit code 0

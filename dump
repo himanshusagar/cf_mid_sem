@@ -1,0 +1,20 @@
+D:\ML\Projects\Python3VirtualEnv\Scripts\python.exe D:/SEM_6/CF/Papers/ImplProject/four_svd/svd_main.py
+Evaluating MAE of algorithm SVD.
+
+------------
+Fold 1
+MAE:  0.7768
+------------
+Fold 2
+MAE:  0.7630
+------------
+Fold 3
+MAE:  0.7557
+------------
+Fold 4
+MAE:  0.7560
+------------
+Fold 5
+MAE:  0.7627
+
+Process finished with exit code 0
